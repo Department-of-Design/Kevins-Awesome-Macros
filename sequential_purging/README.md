@@ -11,7 +11,7 @@ In Limited mode a purge line gets drawn every print and you dont have to worry a
 ps. chatGPT's description that i found fairly funny for limited mode:
 ```Now, in the limited mode, it's like having a strict bouncer at the door of a fancy club for filament purges! You don't have to stress about forgetting those purge lines on the bed because this bouncer won't let the party start until the purge_sections_amount is full. No sneak-ins allowed! It's like having a personal filament cleanup crew ensuring your print bed stays as tidy as a cat's freshly swept litter box.```
 
-
+## Installation
 1. Use `ssh` to open your printer's terminal, eg [Putty](https://www.putty.org/)
    ```bash
     cd
@@ -35,7 +35,7 @@ ps. chatGPT's description that i found fairly funny for limited mode:
     ```
 3. Open `sequential_purge.cfg` in the `Kevins-Awesome-Macros` folder.
 Next got to the variables section in the `sequential_purge` macro. 
-```yaml
+    ```yaml
     [gcode_macro sequential_purge]
     description: Makes sequential purges in case you forget to remove the purge your previous print did. Requires save_variables
 
@@ -49,11 +49,11 @@ Next got to the variables section in the `sequential_purge` macro.
     variable_continuous: True
 
     # the distance the ......
-```
+    ```
 Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purging#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
 
 > **Note:**
-    > If you choose continuous mode you can remove both the macro's CHECK_PURGES and RESET_PURGES because they are not needed
+    If you choose continuous mode you can remove both the macro's CHECK_PURGES and RESET_PURGES because they are not needed
 
 ## Configuration
 | Setting                           | Description                                                                                                                                                                                                     | Input                                    | Default |
