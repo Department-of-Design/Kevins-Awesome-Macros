@@ -117,3 +117,6 @@ When your purge section is full and you try to start a print you'll notice you c
 </p>
 This happens because the macro already includes the `save_variable` section. To fix this remove the section in a place that is not sequential_purge.cfg. 
 </details>
+
+## Credits
+Huge thanks to [kyleisah](https://github.com/kyleisah) for making KAMP and for the inspiration for this macro. 
