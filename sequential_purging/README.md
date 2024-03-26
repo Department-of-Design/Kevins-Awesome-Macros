@@ -2,6 +2,8 @@
 
 This incredible macro ensures that you won't have to fret about forgetting to remove your purgeline from your bed. While the macro itself doesn't remove the purgeline automatically, it does provide a buffer, minimizing the chance of error by always accommodating the previous purgeline from the previous print.
 
+![Discord Shield](https://discordapp.com/api/guilds/[SERVER ID]/widget.png?style=shield)
+
 ## Modes
 ### Continuous
 In continuous mode the purge line gets drawn every print in an order and when the purge_sections_amount is full it will start back at the first purge section.
@@ -50,6 +52,8 @@ Next go to the variables section in the `sequential_purge` macro.
 
     # the distance the ......
     ```
+4. Add ```[include sequential_purge.cfg]``` to your printer.cfg.
+
 Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purging#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
 
 > **Note:**
@@ -69,7 +73,7 @@ Here you can configure the settings for the macro. The most important setting is
 
 
 
-## Macro's
+## Macro's in config
 
 This package contain's 3 macro's: `SEQUENTIAL_PURGE`, `CHECK_PURGES` and `RESET_PURGES`.
 
@@ -95,3 +99,18 @@ SEQUENTIAL_PURGE
 ```
 For the limited mode it's a little diffrent, here you check if the purge section is full before the print start's so you don't heat the printer up to find out there's still purges.
 
+## Usage (only when using limited mode)
+When your purge section is full and you try to start a print you'll notice you can't. This is because your printer know's the purge section is full and you'll have to remove all the purge lines and use the `RESET_PURGES` command to let the printer know you've removed all purges. Now you can start a print again and be happily ever after. 
+
+## Troubleshooting
+
+<details>
+    <summary>
+        <b>
+        I'm getting an error about save_variables!
+        </b>
+    </summary>
+<p>
+</p>
+This happens because the macro already includes the `save_variable` section. To fix this remove the section in a place that is not sequential_purge.cfg. 
+</details>
