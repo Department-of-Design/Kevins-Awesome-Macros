@@ -22,7 +22,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     
     git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
 
-    cp ~/Kevins-Awesome-Macros/sequential_purging/config/sequential_purge.cfg ~/printer_data/config/sequential_purge.cfg
+    cp ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg ~/printer_data/config/sequential_purge.cfg
     ```
 
 2. Open your `moonraker.conf` file and add this configuration:
@@ -57,7 +57,7 @@ Next go to the variables section in the `sequential_purge` macro.
 Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purging#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
 
 > **Note:**
-    If you choose continuous mode you can remove both the macro's CHECK_PURGES and RESET_PURGES because they are not needed
+    If you choose continuous mode you can remove both the macro's CHECK_PURGES and RESET_PURGES because they are not needed.
 
 ## Configuration
 | Setting                           | Description                                                                                                                                                                                                                                                                        | Input                                     | Default |
