@@ -34,7 +34,7 @@ ps. chatGPT's description that i found fairly funny for limited mode:
    primary_branch: main
     ```
 3. Open `sequential_purge.cfg` in the `Kevins-Awesome-Macros` folder.
-Next got to the variables section in the `sequential_purge` macro. 
+Next go to the variables section in the `sequential_purge` macro. 
     ```yaml
     [gcode_macro sequential_purge]
     description: Makes sequential purges in case you forget to remove the purge your previous print did. Requires save_variables
