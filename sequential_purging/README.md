@@ -15,9 +15,6 @@ In continuous mode the purge line gets drawn every print in an order and when th
 ### Limited
 In Limited mode a purge line gets drawn every print and you dont have to worry about accidentally leaving the purgelines on the bed because the print will not start once the purge_sections_amount is full.
 
-ps. chatGPT's description that i found fairly funny for limited mode:
-```Now, in the limited mode, it's like having a strict bouncer at the door of a fancy club for filament purges! You don't have to stress about forgetting those purge lines on the bed because this bouncer won't let the party start until the purge_sections_amount is full. No sneak-ins allowed! It's like having a personal filament cleanup crew ensuring your print bed stays as tidy as a cat's freshly swept litter box.```
-
 ## Installation
 1. Use `ssh` to open your printer's terminal, eg [Putty](https://www.putty.org/)
    ```bash
