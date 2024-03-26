@@ -2,7 +2,10 @@
 
 This incredible macro ensures that you won't have to fret about forgetting to remove your purgeline from your bed. While the macro itself doesn't remove the purgeline automatically, it does provide a buffer, minimizing the chance of error by always accommodating the previous purgeline from the previous print.
 
-![Discord Shield](https://discordapp.com/api/guilds/[SERVER ID]/widget.png?style=shield)
+<a href="https://discord.gg/xqpKrxt9FC">
+         <img alt="Join" src="https://github.com/kevinakasam/BeltDrivenEnder3/blob/main/_ignore/Pictures/Discord-Logo%2BWordmark-Color.png"
+         width=250" >
+</a>
 
 ## Modes
 ### Continuous
