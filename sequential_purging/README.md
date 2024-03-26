@@ -13,7 +13,7 @@ This incredible macro ensures that you won't have to fret about forgetting to re
 ### Continuous
 In continuous mode the purge line gets drawn every print in an order and when the purge_sections_amount is full it will start back at the first purge section.
 ### Limited
-In Limited mode a purge line gets drawn every print and you dont have to worry about accidentally leaving the purgelines on the bed because the print will not start once the purge_sections_amount is full.
+In limited mode a purge line gets drawn every print and you dont have to worry about accidentally leaving the purgelines on the bed because the print will not start once the purge_sections_amount is full.
 
 ## Installation
 1. Use `ssh` to open your printer's terminal, eg [Putty](https://www.putty.org/)
