@@ -1,3 +1,5 @@
+# TESTING DO NOT USE
+
 # Sequential Purging 
 
 This incredible macro ensures that you won't have to fret about forgetting to remove your purgeline from your bed. While the macro itself doesn't remove the purgeline automatically, it does provide a buffer, minimizing the chance of error by always accommodating the previous purgeline from the previous print.
@@ -119,4 +121,4 @@ This happens because the macro already includes the `save_variable` section. To 
 </details>
 
 ## Credits
-Huge thanks to [kyleisah](https://github.com/kyleisah) for making KAMP and for the inspiration for this macro. 
+Huge thanks to [kyleisah](https://github.com/kyleisah) for the amazing work on KAMP and for the inspiration for this macro.
