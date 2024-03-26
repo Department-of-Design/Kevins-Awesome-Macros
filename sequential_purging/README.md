@@ -21,8 +21,6 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     cd
     
     git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
-    
-    ln -s ~/Kevins-Awesome-Macros/sequential_purging/config printer_data/config/Kevins-Awesome-Macros
 
     cp ~/Kevins-Awesome-Macros/sequential_purging/config/sequential_purge.cfg ~/printer_data/config/sequential_purge.cfg
     ```
