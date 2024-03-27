@@ -42,13 +42,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     [include KAM-settings.cfg] 
     [include sequential_purge.cfg]
     ``` 
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
+
 4. Open `KAM-settings.cfg`.
 Next go to the `Sequential Purging` section. 
     ```yaml
@@ -120,7 +114,20 @@ For the limited mode it's a little different, here you check if the purge sectio
 
 ## Usage (only when using limited mode)
 When your purge section is full and you try to start a print, you'll notice you can't. This is because your printer knows the purge section is full and you'll have to remove all the purge lines and use the `RESET_PURGES` command to let the printer know you've removed all purges. Now you can start a print again and be happily ever after. 
-
+## Technical info
+Here is a flowchart on how the macro performs.
+flowchart TD
+    A[SEQUENTIAL_PURGE] --> 
+    B[Get settings] --> 
+    C[Calculate]--> 
+    D[Divide the full purge section in multiple \n sections with the given purge_sections_amount] -->
+    E[Calculate the section_index, which \nrepresents which section the current purge falls\n into based on the purge_index and the \nnumber of purge_sections_amount]--> 
+    F[Get the first coordinate of the purge line]--> 
+    G[Get the last coordinate of the purge line]--> 
+    H[Continuous or Limited?]
+    H --> |Continuous|I[Make Purgeline in given section] --> A
+    H --> |Limited|J[Make Purgeline in given section] --> K[End macro. Aka start print]
+   
 ## Troubleshooting
 
 <details>
