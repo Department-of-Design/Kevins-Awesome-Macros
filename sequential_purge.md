@@ -40,7 +40,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
 3. Add this to your printer.cfg.   
     ```yaml
     [include KAM-settings.cfg] 
-    [include sequential_purge.cfg]
+    [include KAM/sequential_purge.cfg]
     ``` 
 
 4. Open `KAM-settings.cfg`.
