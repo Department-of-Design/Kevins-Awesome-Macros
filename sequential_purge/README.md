@@ -54,7 +54,7 @@ Next go to the variables section in the `sequential_purge` macro.
     ```
 4. Add ```[include sequential_purge.cfg]``` to your printer.cfg.
 
-Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purging#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
+Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
 
 > **Note:**
     If you choose continuous mode you can remove both the macro's CHECK_PURGES and RESET_PURGES because they are not needed.
@@ -77,7 +77,7 @@ Here you can configure the settings for the macro. The most important setting is
 
 This package contain's 3 macro's: `SEQUENTIAL_PURGE`, `CHECK_PURGES` and `RESET_PURGES`.
 
-For [continuous](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purging#continuous) mode you only need `SEQUENTIAL_PURGE`. With the [limited](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purging#limited) mode you need all 3 the macro's. 
+For [continuous](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#continuous) mode you only need `SEQUENTIAL_PURGE`. With the [limited](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#limited) mode you need all 3 the macro's. 
 
 Here's how your `PRINT_START` would look for both of them.
 
