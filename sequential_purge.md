@@ -116,6 +116,7 @@ For the limited mode it's a little different, here you check if the purge sectio
 When your purge section is full and you try to start a print, you'll notice you can't. This is because your printer knows the purge section is full and you'll have to remove all the purge lines and use the `RESET_PURGES` command to let the printer know you've removed all purges. Now you can start a print again and be happily ever after. 
 ## Technical info
 Here is a flowchart on how the macro performs.
+```mermaid
 flowchart TD
     A[SEQUENTIAL_PURGE] --> 
     B[Get settings] --> 
@@ -127,7 +128,7 @@ flowchart TD
     H[Continuous or Limited?]
     H --> |Continuous|I[Make Purgeline in given section] --> A
     H --> |Limited|J[Make Purgeline in given section] --> K[End macro. Aka start print]
-   
+```
 ## Troubleshooting
 
 <details>
