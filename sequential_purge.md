@@ -22,7 +22,9 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     
     git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
 
-    cp ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg ~/printer_data/config/sequential_purge.cfg
+    ln -s ~/Kevins-Awesome-Macros/config printer_data/config/kevins_awesome_macros
+
+    cp ~/Kevins-Awesome-Macros/config/KAM-Settings.cfg ~/printer_data/config/KAM-Settings.cfg
     ```
 
 2. Open your `moonraker.conf` file and add this configuration:
@@ -35,30 +37,46 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
    managed_services: klipper
    primary_branch: main
     ```
-3. Add ```[include sequential_purge.cfg]``` to your printer.cfg.
-
-4. Open `sequential_purge.cfg`.
-Next go to the variables section in the `sequential_purge` macro. 
+3. Add this to your printer.cfg.   
     ```yaml
-    [gcode_macro sequential_purge]
-    description: Makes sequential purges in case you forget to remove the purge your previous print did. Requires save_variables
+    [include KAM-settings.cfg] 
+    [include sequential_purge.cfg]
+    ``` 
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+4. Open `KAM-settings.cfg`.
+Next go to the `Sequential Purging` section. 
+    ```yaml
+    [gcode_macro _KAM-settings]
+    description: Settings for KAM macros
+
+    #     _____                             _   _       _   _____                 _             
+    #    / ____|                           | | (_)     | | |  __ \               (_)            
+    #   | (___   ___  __ _ _   _  ___ _ __ | |_ _  __ _| | | |__) |   _ _ __ __ _ _ _ __   __ _ 
+    #    \___ \ / _ \/ _` | | | |/ _ \ '_ \| __| |/ _` | | |  ___/ | | | '__/ _` | | '_ \ / _` |
+    #    ____) |  __/ (_| | |_| |  __/ | | | |_| | (_| | | | |   | |_| | | | (_| | | | | | (_| |
+    #   |_____/ \___|\__, |\__,_|\___|_| |_|\__|_|\__,_|_| |_|    \__,_|_|  \__, |_|_| |_|\__, |
+    #                   | |                                                  __/ |         __/ |
+    #                   |_|                                                 |___/         |___/ 
 
     # Continuous: where the purge line gets drawn every print in an order and when the purge_sections_amount is full it will start back at the first purge section.
-    # Limited: draws a purge line every print and you don't have to worry about accidentally leaving the purge lines on the bed because the print will not start once the purge_sections_amount is full.
-    # !! for the Limited version you need CHECK_PURGES somewhere before the SEQUENTIAL_PURGE command in your PRINT_START macro. Preferably before your printer heats up so you don't waste the heating time. 
+    # Limited: draws a purge line every print and you dont have to worry about accidentally leaving the purgelines on the bed because the print will not start once the purge_sections_amount is full.
+    # !! for the Limited mode you need CHECK_PURGES somewhere before the SEQUENTIAL_PURGE command in your PRINT_START macro. Preferably before your printer heats up so you don't waste the heating time. 
     # !! when the purge section is full you can use RESET_PURGES to clear the system and start at the first purge section on your next print.
 
     # set this to True if you want continuous, and to false if you want limited
     # default is True
     variable_continuous: True
 
-    # the distance the ......
+    # this is only...
     ```
 
 Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
-
-> **Note:**
-    If you choose continuous mode you can remove both the macros CHECK_PURGES and RESET_PURGES because they are not needed.
 
 ## Configuration
 | Setting                           | Description                                                                                                                                                                                                                                                                        | Input                                     | Default |
