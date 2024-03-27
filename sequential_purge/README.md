@@ -35,7 +35,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
    managed_services: klipper
    primary_branch: main
     ```
-3. Open `sequential_purge.cfg` in the `Kevins-Awesome-Macros` folder.
+3. Open `sequential_purge.cfg`.
 Next go to the variables section in the `sequential_purge` macro. 
     ```yaml
     [gcode_macro sequential_purge]
@@ -97,7 +97,7 @@ Heat printer
 (more print start stuff)
 SEQUENTIAL_PURGE
 ```
-For the limited mode it's a little diffrent, here you check if the purge section is full before the print start's so you don't heat the printer up to find out there's still purges.
+For the limited mode it's a little different, here you check if the purge section is full before the print start's so you don't heat the printer up to find out there's still purges.
 
 ## Usage (only when using limited mode)
 When your purge section is full and you try to start a print you'll notice you can't. This is because your printer know's the purge section is full and you'll have to remove all the purge lines and use the `RESET_PURGES` command to let the printer know you've removed all purges. Now you can start a print again and be happily ever after. 
