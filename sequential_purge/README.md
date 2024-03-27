@@ -35,7 +35,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
    managed_services: klipper
    primary_branch: main
     ```
-3. Open `sequential_purge.cfg` in the `Kevins-Awesome-Macros` folder.
+3. Open `sequential_purge.cfg`.
 Next go to the variables section in the `sequential_purge` macro. 
     ```yaml
     [gcode_macro sequential_purge]
