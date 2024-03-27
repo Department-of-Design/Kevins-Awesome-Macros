@@ -22,7 +22,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     
     git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
 
-    ln -s ~/Kevins-Awesome-Macros/config printer_data/config/kevins_awesome_macros
+    ln -s ~/Kevins-Awesome-Macros/config printer_data/config/KAM
 
     cp ~/Kevins-Awesome-Macros/config/KAM-settings.cfg ~/printer_data/config/KAM-settings.cfg
     ```
