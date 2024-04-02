@@ -22,9 +22,9 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     
     git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
 
-    ln -s ~/Kevins-Awesome-Macros/config printer_data/config/kevins_awesome_macros
+    ln -s ~/Kevins-Awesome-Macros/config printer_data/config/KAM
 
-    cp ~/Kevins-Awesome-Macros/config/KAM-Settings.cfg ~/printer_data/config/KAM-Settings.cfg
+    cp ~/Kevins-Awesome-Macros/config/KAM-settings.cfg ~/printer_data/config/KAM-settings.cfg
     ```
 
 2. Open your `moonraker.conf` file and add this configuration:
@@ -39,8 +39,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     ```
 3. Add this to your printer.cfg.   
     ```yaml
-    [include KAM-settings.cfg] 
-    [include sequential_purge.cfg]
+    [include KAM-settings.cfg]
     ``` 
 
 4. Open `KAM-settings.cfg`.
