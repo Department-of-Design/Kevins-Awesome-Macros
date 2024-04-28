@@ -141,5 +141,16 @@ flowchart TD
 This happens because the macro already includes the `save_variable` section. To fix this remove the section in a place that is not sequential_purge.cfg. 
 </details>
 
+<details>
+    <summary>
+        <b>
+        I'm getting the error `Error evaluating 'gcode_macro sequential_purge :gcode': jinja2.exceptions.UndefinedError:'dict object' has no attribute 'purge_index'`
+        </b>
+    </summary>
+<p>
+</p>
+This error is caused by running an older version of Klipper, to resolve this either update your system or run RESET_PURGES.
+</details>
+
 ## Credits
 Huge thanks to [Kyleisah](https://github.com/kyleisah) for the amazing work on KAMP and for the inspiration for this macro.
