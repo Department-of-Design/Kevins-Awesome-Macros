@@ -41,8 +41,8 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     ```yaml
     [include KAM-settings.cfg]
     ``` 
-
-4. Open `KAM-settings.cfg`.
+4. Send `_INITIALIZE_PURGE` in your console to initialize the purge counting. This fortunately only has to be done once so you can forget about it afterwards.
+5. Open `KAM-settings.cfg`.
 Next go to the `Sequential Purging` section. 
     ```yaml
     [gcode_macro _KAM-settings]
