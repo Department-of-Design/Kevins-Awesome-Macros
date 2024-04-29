@@ -41,8 +41,9 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     ```yaml
     [include KAM-settings.cfg]
     ``` 
-4. Send the macro `_INITIALIZE_PURGE` in your printers console to initialize the purge counting. This fortunately only has to be done once so you can forget about it afterwards.
-5. Open `KAM-settings.cfg`.
+4. Restart your firmware by sending `FIRMARE_RESTART`.
+5. Send the macro `_INITIALIZE_PURGE` in your printers console to initialize the purge counting. This fortunately only has to be done once so you can forget about it afterwards.
+6. Open `KAM-settings.cfg`.
 Next go to the `Sequential Purging` section. 
     ```yaml
     [gcode_macro _KAM-settings]
@@ -71,7 +72,8 @@ Next go to the `Sequential Purging` section.
 
 Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
 
-After doing all of this send the macro `FIRMARE_RESTART`
+After making any changes in the config you will need to restart the firmware by using `FIRMWARE_RESTART`
+
 ## Configuration
 | Setting                           | Description                                                                                                                                                                                                                                                                        | Input                                     | Default |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|---------|
