@@ -2,12 +2,9 @@
 
 # Sequential Purging 
 
-This incredible macro ensures that you won't have to fret about forgetting to remove your purge line from your bed. While the macro itself doesn't remove the purge line automatically, it does provide a buffer, minimizing the chance of error by always accommodating the previous purge line from the previous print.
+This incredible macro ensures you shall worry no more! Avoid problems caused by purge lines from previous prints that haven't been removed from the bed.
 
-<a href="https://discord.gg/xqpKrxt9FC">
-         <img alt="Join" src="https://github.com/kevinakasam/BeltDrivenEnder3/blob/main/_ignore/Pictures/Discord-Logo%2BWordmark-Color.png"
-         width=250" >
-</a>
+While the macro itself doesn't (and can't) remove the purge line from your bed automatically, it does provide a mechanism by which the purge line is printed in avoidance of previous purges, remembering and avoiding the location of the purge lines in previous print jobs.
 
 ## Modes
 ### Continuous
@@ -72,7 +69,9 @@ Next go to the `Sequential Purging` section.
 
 Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
 
-After making any changes in the config you will need to restart the firmware by using `FIRMWARE_RESTART`
+
+> [!IMPORTANT]
+> After making any changes in the config you will need to restart the firmware by using `FIRMWARE_RESTART` or the button in the UI. If you don't restart the firmware the changes will not have any effect.
 
 ## Configuration
 | Setting                           | Description                                                                                                                                                                                                                                                                        | Input                                     | Default |
