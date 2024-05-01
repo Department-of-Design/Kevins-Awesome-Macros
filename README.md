@@ -14,8 +14,6 @@ This incredible macro ensures you shall worry no more! Avoid problems caused by 
 
 While the macro itself doesn't (and can't) remove the purge line from your bed automatically, it does provide a mechanism by which the purge line is printed in avoidance of previous purges, remembering and avoiding the location of the purge lines in previous print jobs.
 
----
-
 ## Community
 
 Got stuck with a macro? Unsure of what to do with an error?  
