@@ -7,7 +7,7 @@ A collection of awesome macros for Klipper printers
 
 ### Sequential Purging Macro
 
-[![Download](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/57cfb0b1-afa5-4919-ace7-0f019144a83d)](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/config/sequential_purge.cfg)
+[![Download](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/57cfb0b1-afa5-4919-ace7-0f019144a83d)](/sequential_purge.md#installation)
 [![Documentation](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/da62d421-d8e3-43b6-b535-5429b333bdab)](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md)
 
 This incredible macro ensures you shall worry no more! Avoid problems caused by purge lines from previous prints that haven't been removed from the bed.
