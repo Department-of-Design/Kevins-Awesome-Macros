@@ -2,9 +2,10 @@
 
 A collection of awesome macros for Klipper printers
 
-Please make sure to read the documentation before installing these macros. The docs contain valuable information about installation, configuration, and optional features.
+> [!IMPORTANT]
+> Please make sure to ${ \textsf{\color{red}read the documentation} }$ before installing these macros. The docs contain valuable information about installation, configuration, and optional features.
 
-## Sequential Purging Macro
+### Sequential Purging Macro
 
 [![Download](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/57cfb0b1-afa5-4919-ace7-0f019144a83d)](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/config/sequential_purge.cfg)
 [![Documentation](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/da62d421-d8e3-43b6-b535-5429b333bdab)](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md)
