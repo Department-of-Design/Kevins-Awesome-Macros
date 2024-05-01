@@ -12,3 +12,14 @@ Please make sure to read the documentation before installing these macros. The d
 This incredible macro ensures you shall worry no more! Avoid problems caused by purge lines from previous prints that haven't been removed from the bed.
 
 While the macro itself doesn't (and can't) remove the purge line from your bed automatically, it does provide a mechanism by which the purge line is printed in avoidance of previous purges, remembering and avoiding the location of the purge lines in previous print jobs.
+
+---
+
+## Community
+
+Got stuck with a macro? Unsure of what to do with an error?  
+Or just curious where all the other nerds hang out?
+
+Discord is the place-to-be! Home to the Department of Design and fans of KevinAkaSam's inventions alike.
+
+[![Discord Invite](https://discordapp.com/api/guilds/964441223169449984/widget.png?style=banner3)](https://discord.gg/xqpKrxt9FC)
