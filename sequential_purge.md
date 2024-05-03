@@ -2,12 +2,9 @@
 
 # Sequential Purging 
 
-This incredible macro ensures that you won't have to fret about forgetting to remove your purge line from your bed. While the macro itself doesn't remove the purge line automatically, it does provide a buffer, minimizing the chance of error by always accommodating the previous purge line from the previous print.
+This incredible macro ensures you shall worry no more! Avoid problems caused by purge lines from previous prints that haven't been removed from the bed.
 
-<a href="https://discord.gg/xqpKrxt9FC">
-         <img alt="Join" src="https://github.com/kevinakasam/BeltDrivenEnder3/blob/main/_ignore/Pictures/Discord-Logo%2BWordmark-Color.png"
-         width=250" >
-</a>
+While the macro itself doesn't (and can't) remove the purge line from your bed automatically, it does provide a mechanism by which the purge line is printed in avoidance of previous purges, remembering and avoiding the location of the purge lines in previous print jobs.
 
 ## Modes
 ### Continuous
@@ -41,8 +38,9 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     ```yaml
     [include KAM-settings.cfg]
     ``` 
-
-4. Open `KAM-settings.cfg`.
+4. Restart your firmware by sending `FIRMARE_RESTART`.
+5. Send the macro `_INITIALIZE_PURGE` in your printers console to initialize the purge counting. This fortunately only has to be done once so you can forget about it afterwards.
+6. Open `KAM-settings.cfg`.
 Next go to the `Sequential Purging` section. 
     ```yaml
     [gcode_macro _KAM-settings]
@@ -71,20 +69,25 @@ Next go to the `Sequential Purging` section.
 
 Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
 
+
+> [!IMPORTANT]
+> After making any changes in the config you will need to restart the firmware by using `FIRMWARE_RESTART` or the button in the UI. If you don't restart the firmware the changes will not have any effect.
+
 ## Configuration
 | Setting                           | Description                                                                                                                                                                                                                                                                        | Input                                     | Default |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|---------|
 | `variable_continuous`             | Setting for setting the mode you want to use.                                                                                                                                                                                                                                      | `True` (Continuous) <br>`False` (Limited) | `True`  |
 | `variable_stop_print_on_warning`  | This is only needed on limited mode. This will stop the print if the purge section is full, if this is set to false it will echo a message to console instead of aborting the print.<br>This will also automatically reset the purges and continue printing. Use at your own risk. | `True`<br>`False`                         | `False` |
 | `variable_warning_time`           | Time user has to remove purges                                                                                                                                                                                                                                                     | `0` to `3600`                             | `30`    |
-| `variable_bedsize_purge_offset`   | The distance the purge line is away from the bed in both X and Y. This will only (haven't tested this on any other printers) work on configurations where the 0,0 point is on the left bottom corner of the bed.                                                                    | `0` to `100`                              | `15`    |
+| `variable_x_purge_offset`   | The distance the purge line is away from the bed in X on both sides. This will only (haven't tested this on any other printers) work on configurations where the 0,0 point is on the left bottom corner of the bed.                                                                    | `0` to `100`                              | `10`    |
+| `variable_y_purge_offset`   | The distance the purge line is away from the bed in Y. This will only (haven't tested this on any other printers) work on configurations where the 0,0 point is on the left bottom corner of the bed.                                                                    | `0` to `100`                              | `3`    |
 | `variable_purge_sections_amount`  | The amount of purge sections in the line.                                                                                                                                                                                                                                          | `0` to `20`                               | `5`     |
 | `variable_purge_height`           | The distance from the bed for the purge line.                                                                                                                                                                                                                                      | Any number above `0`                      | `0.4`   |
 | `variable_flow_rate`              | Flow rate for the purge line, many put this as their hotend flow limit.                                                                                                                                                                                                             | Any number above `0`                      | `12`    |
 | `variable_purge_amount`           | Amount of filament purged.                                                                                                                                                                                                                                                         | Any number above `0`                      | `80`    |
 | `variable_tip_distance`           | The distance between the tip of the filament and the nozzle before purging, should be similar to the final retract amount specified in PRINT_END.                                                                                                                                  | Any number above `0`                      | `10`    |
 | `variable_purge_line_end_overlap` | Specifies the overlap of the purge line with the next purge line in percentage.                                                                                                                                                                                                    | Percentage from `0` to `100`              | `50`    |
-
+| `min_temp_extrude` | temperature where filament can be extruder, will error below this temp.                                                                                                                                                                                                    | Temperature in Celcius             | `180`    |
 ## Macros in config
 
 This package contain's 3 macros: `SEQUENTIAL_PURGE`, `CHECK_PURGES` and `RESET_PURGES`.
@@ -113,6 +116,7 @@ For the limited mode it's a little different, here you check if the purge sectio
 
 ## Usage (only when using limited mode)
 When your purge section is full and you try to start a print, you'll notice you can't. This is because your printer knows the purge section is full and you'll have to remove all the purge lines and use the `RESET_PURGES` command to let the printer know you've removed all purges. Now you can start a print again and be happily ever after. 
+
 ## Technical info
 Here is a flowchart on how the macro performs.
 ```mermaid
@@ -128,6 +132,24 @@ flowchart TD
     H --> |Continuous|I[Make Purgeline in given section] --> A
     H --> |Limited|J[Make Purgeline in given section] --> K[End macro. Aka start print]
 ```
+
+## Uninstalling
+That's unfortunate, is the macro not working for you? If you're having trouble you can eihter send me direct message on Discord @ danni_design or ping me in the KevinAkaSam's sandbox server. 
+
+If you really wish to uninstall this macro you can do so by running these commands in your SSH terminal of choice:
+
+```bash
+cd
+rm -rf Kevins-Awesome-Macros
+rm printer_data/config/KAM-settings.cfg
+rm printer_data/config/KAM
+```
+
+And remove the following from your `printer.cfg`
+```yaml
+[include KAM-settings.cfg]
+```
+
 ## Troubleshooting
 
 <details>
