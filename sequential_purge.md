@@ -134,7 +134,7 @@ flowchart TD
 ```
 
 ## Uninstalling
-That's unfortunate, is the macro not working for you? If you're having trouble you can eihter send me direct message on Discord @ danni_design or ping me in the KevinAkaSam's sandbox server. 
+That's unfortunate, is the macro not working for you? If you're having trouble you can either send me direct message on Discord @ danni_design or ping me in the KevinAkaSam's sandbox server. 
 
 If you really wish to uninstall this macro you can do so by running these commands in your SSH terminal of choice:
 
