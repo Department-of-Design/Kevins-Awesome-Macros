@@ -40,7 +40,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     ```yaml
     [include KAM-settings.cfg]
     ``` 
-4. Restart your firmware by sending `FIRMARE_RESTART`.
+4. Restart your firmware by sending `FIRMWARE_RESTART`.
 5. Send the macro `_INITIALIZE_PURGE` in your printers console to initialize the purge counting. This fortunately only has to be done once so you can forget about it afterwards.
 6. Open `KAM-settings.cfg`.
 Next go to the `Sequential Purging` section. 
