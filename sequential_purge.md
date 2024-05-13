@@ -6,6 +6,8 @@ This incredible macro ensures you shall worry no more! Avoid problems caused by 
 
 While the macro itself doesn't (and can't) remove the purge line from your bed automatically, it does provide a mechanism by which the purge line is printed in avoidance of previous purges, remembering and avoiding the location of the purge lines in previous print jobs.
 
+At the moment the macro can only purge on the front of the bed, not on the back of the sides.
+
 ## Modes
 ### Continuous
 In continuous mode the purge line gets drawn every print in an order and when the purge_sections_amount is full it will start back at the first purge section.
