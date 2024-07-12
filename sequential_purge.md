@@ -1,4 +1,5 @@
-# STILL TESTING DO NOT USE
+# BETA
+# FOR ISSUES PING ME (danni_design) IN THE [DISCORD](https://discord.gg/xqpKrxt9FC) SERVER.
 
 # Sequential Purging 
 
