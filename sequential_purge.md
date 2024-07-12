@@ -5,6 +5,9 @@
 
 This incredible macro ensures you shall worry no more! Avoid problems caused by purge lines from previous prints that haven't been removed from the bed.
 
+![Sequential Purge4](https://github.com/user-attachments/assets/939f6509-9136-4ea3-83d8-b0293a6a49f5)
+
+
 While the macro itself doesn't (and can't) remove the purge line from your bed automatically, it does provide a system by which the purge line is printed in avoidance of previous purges, remembering and avoiding the location of the purge lines in previous print jobs.
 
 At the moment the macro can only purge on the front of the bed, not on the back or the left and right sides.
