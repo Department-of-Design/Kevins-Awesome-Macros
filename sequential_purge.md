@@ -98,7 +98,7 @@ Here you can configure the settings for the macro. The most important setting is
 
 This package contain's 3 macros: `SEQUENTIAL_PURGE`, `CHECK_PURGES` and `RESET_PURGES`.
 
-For [continuous](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#continuous) mode you only need `SEQUENTIAL_PURGE`. With the [limited](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#limited) mode you need all 3 the macros. 
+For [continuous](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md#continuous) mode you only need `SEQUENTIAL_PURGE`. With the [limited](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md#limited) mode you need all 3 the macros. 
 
 Here's how your `PRINT_START` would look for both of them.
 
@@ -178,6 +178,17 @@ This happens because the macro already includes the `save_variable` section. To 
 <p>
 </p>
 This error is caused by running an older version of Klipper, to resolve this either update your system or run RESET_PURGES.
+</details>
+
+<details>
+    <summary>
+        <b>
+        I'm getting the error `Unkown command: "RESPOND"` when using the `_INITIALIZE_PURGES` command. 
+        </b>
+    </summary>
+<p>
+</p>
+You will get this error if you don't have the `[respond]` section configured. You can do so by adding `[respond]` anywhere in your config. The easiest is to add it to your `printer.cfg`
 </details>
 
 ## Credits
