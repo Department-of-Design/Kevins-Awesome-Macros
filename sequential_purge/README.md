@@ -25,7 +25,7 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
     
     git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
 
-    ln -s ~/Kevins-Awesome-Macros/config printer_data/config/KAM
+    ln -s ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg printer_data/config/KAM
 
     cp ~/Kevins-Awesome-Macros/config/KAM-settings.cfg ~/printer_data/config/KAM-settings.cfg
     ```
@@ -52,14 +52,11 @@ Next go to the `Sequential Purging` section.
     [gcode_macro _KAM-settings]
     description: Settings for KAM macros
 
-    #     _____                             _   _       _   _____                 _             
-    #    / ____|                           | | (_)     | | |  __ \               (_)            
-    #   | (___   ___  __ _ _   _  ___ _ __ | |_ _  __ _| | | |__) |   _ _ __ __ _ _ _ __   __ _ 
-    #    \___ \ / _ \/ _` | | | |/ _ \ '_ \| __| |/ _` | | |  ___/ | | | '__/ _` | | '_ \ / _` |
-    #    ____) |  __/ (_| | |_| |  __/ | | | |_| | (_| | | | |   | |_| | | | (_| | | | | | (_| |
-    #   |_____/ \___|\__, |\__,_|\___|_| |_|\__|_|\__,_|_| |_|    \__,_|_|  \__, |_|_| |_|\__, |
-    #                   | |                                                  __/ |         __/ |
-    #                   |_|                                                 |___/         |___/ 
+
+    ####################
+    # Sequential purging
+    ####################
+
 
     # Continuous: where the purge line gets drawn every print in an order and when the purge_sections_amount is full it will start back at the first purge section.
     # Limited: draws a purge line every print and you dont have to worry about accidentally leaving the purgelines on the bed because the print will not start once the purge_sections_amount is full.
