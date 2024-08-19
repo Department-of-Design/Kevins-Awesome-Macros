@@ -19,7 +19,7 @@ In continuous mode the purge line gets drawn every print in an order and when th
 In limited mode a purge line gets drawn every print and you dont have to worry about accidentally leaving the purge lines on the bed because the print will not start once the purge_sections_amount is full.
 
 ## Installation
-1. Use `ssh` to open your printer's terminal, eg [Putty](https://www.putty.org/)
+1. Use `ssh` to open your printer's terminal, e.g. [Putty](https://www.putty.org/)
    ```bash
     cd
     
@@ -54,7 +54,7 @@ Next go to the `Sequential Purging` section.
 
 
     ####################
-    # Sequential purging
+    # Sequential Purging
     ####################
 
 
@@ -93,9 +93,9 @@ Here you can configure the settings for the macro. The most important setting is
 | `min_temp_extrude` | temperature where filament can be extruder, will error below this temp.                                                                                                                                                                                                    | Temperature in Celcius             | `180`    |
 ## Macros in config
 
-This package contain's 3 macros: `SEQUENTIAL_PURGE`, `CHECK_PURGES` and `RESET_PURGES`.
+This package contain's 3 macros: `_SEQUENTIAL_PURGE`, `_CHECK_PURGES` and `_RESET_PURGES`.
 
-For [continuous](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md#continuous) mode you only need `SEQUENTIAL_PURGE`. With the [limited](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md#limited) mode you need all 3 the macros. 
+For [continuous](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md#continuous) mode you only need `_SEQUENTIAL_PURGE`. With the [limited](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md#limited) mode you need all 3 the macros. 
 
 Here's how your `PRINT_START` would look for both of them.
 
@@ -104,27 +104,27 @@ Here's how your `PRINT_START` would look for both of them.
 Home printer
 Heat printer
 (more print start stuff)
-SEQUENTIAL_PURGE
+_SEQUENTIAL_PURGE
 ```
 In the continuous mode you can just replace your purge with the SEQUENTIAL_PURGE command.
 #### Limited
 ```yaml
-CHECK_PURGES
+_CHECK_PURGES
 Home printer
 Heat printer
 (more print start stuff)
-SEQUENTIAL_PURGE
+_SEQUENTIAL_PURGE
 ```
 For the limited mode it's a little different, here you check if the purge section is full before the print start's so you don't heat the printer up to find out there's still purges.
 
 ## Usage (only when using limited mode)
-When your purge section is full and you try to start a print, you'll notice you can't. This is because your printer knows the purge section is full and you'll have to remove all the purge lines and use the `RESET_PURGES` command to let the printer know you've removed all purges. Now you can start a print again and be happily ever after. 
+When your purge section is full and you try to start a print, you'll notice you can't. This is because your printer knows the purge section is full and you'll have to remove all the purge lines and use the `_RESET_PURGES` command to let the printer know you've removed all purges. Now you can start a print again and be happily ever after. 
 
 ## Technical info
 Here is a flowchart on how the macro performs.
 ```mermaid
 flowchart TD
-    A[SEQUENTIAL_PURGE] --> 
+    A[_SEQUENTIAL_PURGE] --> 
     B[Get settings] --> 
     C[Calculate]--> 
     D[Divide the full purge section in multiple \n sections with the given purge_sections_amount] -->
