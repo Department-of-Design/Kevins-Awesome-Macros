@@ -19,17 +19,16 @@ In continuous mode the purge line gets drawn every print in an order and when th
 In limited mode a purge line gets drawn every print and you dont have to worry about accidentally leaving the purge lines on the bed because the print will not start once the purge_sections_amount is full.
 
 ## Installation
-1. Use `ssh` to open your printer's terminal, e.g. [Putty](https://www.putty.org/)
+1. Use `ssh` to open your printer's terminal, e.g. [Putty](https://www.putty.org/) and send these commands. 
    ```bash
-    cd
-    
-    git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
+    sudo apt-get update && sudo apt-get install git -y
 
-    ln -s ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg printer_data/config/KAM
+    cd ~ && git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
 
-    cp ~/Kevins-Awesome-Macros/KAM-settings.cfg ~/printer_data/config/KAM-settings.cfg
+    ./Kevins-Awesome-Macros/KAM-setup.sh
     ```
-
+    Follow the onscreen instructions in the setup wizard.
+    
 2. Open your `moonraker.conf` file and add this configuration:
    ```yaml
    [update_manager Kevins-Awesome-Macros]
@@ -139,13 +138,22 @@ flowchart TD
 ## Uninstalling
 That's unfortunate, is the macro not working for you? If you're having trouble you can either send me direct message on Discord @ danni_design or ping me in the KevinAkaSam's sandbox server. 
 
-If you really wish to uninstall this macro you can do so by running these commands in your SSH terminal of choice:
+If you really wish to uninstall this macro you can do so opening the setup wizard by sending this in your printers command line.
+```bash
+cd ~ && ./KAM-setup.sh
+```
+
+and going to the Uninstall wizard (2) and follow the steps given.
+
+
+If you don't have the setup wizard anymore you can manually send these commands in the command line.
 
 ```bash
 cd
 rm -rf Kevins-Awesome-Macros
 rm printer_data/config/KAM-settings.cfg
-rm printer_data/config/KAM
+rm printer_data/config/KAM/*
+rmdir printer_data/config/KAM
 ```
 
 And remove the following from your `printer.cfg`
