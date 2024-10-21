@@ -143,7 +143,7 @@ If you really wish to uninstall this macro you can do so opening the setup wizar
 cd ~ && ./KAM-setup.sh
 ```
 
-and going to the Uninstall wizard (2) and follow the steps given.
+and going to the Uninstall menu (2) and follow the steps given.
 
 
 If you don't have the setup wizard anymore you can manually send these commands in the command line.

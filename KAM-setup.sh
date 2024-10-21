@@ -34,15 +34,11 @@ run_choice() {
             echo
             echo "Installing Sequential Purging..."
             echo
-            if [ ! -d "Kevins-Awesome-Macros" ]; then
-                echo "Kevin's Awesome Macro's not found. Installing... (cloning from github)"
-                echo
-                git clone https://github.com/DanniDesign/Kevins-Awesome-Macros.git
-                cp ~/Kevins-Awesome-Macros/KAM-settings.cfg ~/printer_data/config/KAM-settings.cfg
-            else
-                echo "Kevin's Awesome Macro's already exists. Skipping git clone."
-            fi
+            echo -e "\033[1;31mCopying over config file..."
+            cp ~/Kevins-Awesome-Macros/KAM-settings.cfg ~/printer_data/config/KAM-settings.cfg
+            echo -e "\033[1;31mMaking KAM folder..."
             mkdir ~/printer_data/config/KAM/
+            echo -e "\033[1;31mCreating symbolic link..."
             ln -s ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg printer_data/config/KAM
             echo
             echo -e "\033[0;32mInstallation succesful!"
@@ -59,14 +55,12 @@ run_choice() {
                     echo
                     if [[ $key == "Y" || $key == "y" ]]; then  # Check if the input is B or b
                         cd
-                        echo -e "\033[1;31mDeleting git directory..."
-                        rm -rf Kevins-Awesome-Macros
-                        echo -e "\033[1;31mDeleting KAM settings file..."
-                        rm printer_data/config/KAM-settings.cfg
                         echo -e "\033[1;31mDeleting KAM folder contents..."
                         rm printer_data/config/KAM/*
                         echo -e "\033[1;31mDeleting KAM folder..."
                         rmdir printer_data/config/KAM
+                        echo -e "\033[1;31mDeleting KAM settings file..."
+                        rm printer_data/config/KAM-settings.cfg || break
                         echo
                         echo -e "\033[0;32mDone uninstalling!"
                         break
