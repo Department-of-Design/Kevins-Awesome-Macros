@@ -25,6 +25,8 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
 
     cd ~ && git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
 
+    chmod 755 ./Kevins-Awesome-Macros/KAM-setup.sh 
+    
     ./Kevins-Awesome-Macros/KAM-setup.sh
     ```
     Follow the onscreen instructions in the setup wizard.

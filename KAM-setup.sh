@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
+umask 022
 clear
 # Function to display the menu
 echo -e "\033[0;36m██╗  ██╗███████╗██╗   ██╗██╗███╗   ██╗███████╗     █████╗ ██╗    ██╗███████╗███████╗ ██████╗ ███╗   ███╗███████╗";
