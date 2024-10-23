@@ -132,23 +132,22 @@ install_sequential_purging() {
     empty_line
     echo -e "${BOLD_PINK}Installing Sequential Purging...${RESET}"
     empty_line
-    
     if [ ! -d "printer_data/config/KAM-settings.cfg" ]; then
         echo -e "${BOLD_WHITE}Copying over config file...${RESET}"
         cp ~/Kevins-Awesome-Macros/KAM-settings.cfg ~/printer_data/config/KAM-settings.cfg
         empty_line
     else
-        echo -e "${BOLD_WHITE}Config file already exists. Skipping..."
+        echo -e "${BOLD_WHITE}Config file already exists. Skipping...${RESET}"
         empty_line
     fi
     if [ ! -d "printer_data/config/KAM" ]; then
-        echo -e "${BOLD_WHITE}Making KAM folder..."
+        echo -e "${BOLD_WHITE}Making KAM folder...${RESET}"
         mkdir ~/printer_data/config/KAM/
-        echo -e "${BOLD_WHITE}Creating symbolic link..."
+        echo -e "${BOLD_WHITE}Creating symbolic link...${RESET}"
         ln -s ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg printer_data/config/KAM
         empty_line
     else
-        echo -e "\033[0;32mKAM folder already exists. Skipping..."
+        echo -e "${BOLD_WHITE}KAM folder already exists. Skipping...${RESET}"
         empty_line
     fi
     echo -e "${BOLD_GREEN}Installation succesful!${RESET}"
