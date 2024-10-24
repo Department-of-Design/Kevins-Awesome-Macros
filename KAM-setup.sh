@@ -90,7 +90,7 @@ run_choice() {
                 echo -e "${WHITE}Kevin's Awesome Macro's is already uninstalled.${RESET}"
             else
                 while true; do
-                    read -p '\e[1;31mAre you sure? You will lose all your settings! [y/n]\e[0m: ' key
+                    read -n 1 -s -p $'\e[1;31mAre you sure? You will lose all your settings! [y/n]\e[0m: ' key
                     if [[ $key == "Y" || $key == "y" ]]; then  # Check if the input is B or b
                         uninstall_KAM
                         break
@@ -133,7 +133,7 @@ install_sequential_purging() {
     echo -e "${BOLD_PINK}Installing Sequential Purging...${RESET}"
     echo -e "${BOLD_RED}DO NOT TURN OF THE MACHINE!${RESET}"
     empty_line
-    if [ ! -d "printer_data/config/KAM-settings.cfg" ]; then
+    if [ ! -e "printer_data/config/KAM-settings.cfg" ]; then
         echo -e "${BOLD_WHITE}Copying over config file...${RESET}"
         cp ~/Kevins-Awesome-Macros/KAM-settings.cfg ~/printer_data/config/KAM-settings.cfg
         empty_line
