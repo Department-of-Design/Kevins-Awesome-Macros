@@ -87,7 +87,7 @@ Here, you can configure the settings for the macro. The most important setting i
 
 This package contain's 3 macros: `_SEQUENTIAL_PURGE`, `_CHECK_PURGES` and `_RESET_PURGES`.
 
-For [continuous](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md#continuous) mode you only need `_SEQUENTIAL_PURGE`. With the [limited](https://github.com/Department-of-Design/Kevins-Awesome-Macros/blob/main/sequential_purge.md#limited) mode you need all 3 the macros. 
+For [continuous](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#continuous) mode you only need `_SEQUENTIAL_PURGE`. With the [limited](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#limited) mode you need all 3 the macros. 
 
 Here's how your `PRINT_START` would look for both of them.
 

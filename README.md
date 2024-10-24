@@ -52,8 +52,7 @@ To install the macro(s) you want, follow the steps below. This guide assumes you
     Continue to the documentation of the macro you're trying to      install. This will also be in the output of the installation.
 ### Sequential Purging Macro
 
-[![Download](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/57cfb0b1-afa5-4919-ace7-0f019144a83d)](/sequential_purge/sequential_purge.md#installation)
-[![Documentation](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/da62d421-d8e3-43b6-b535-5429b333bdab)](https://github.com/Department-of-Design/Kevins-Awesome-Macros/sequential_purge/sequential_purge.md)
+[![Documentation](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/da62d421-d8e3-43b6-b535-5429b333bdab)](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge)
 
 This incredible macro ensures you shall worry no more! Avoid problems caused by purge lines from previous prints that haven't been removed from the bed.
 
