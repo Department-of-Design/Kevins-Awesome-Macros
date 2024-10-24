@@ -1,35 +1,27 @@
 # BETA
-# FOR ISSUES PING ME (danni_design) IN THE [DISCORD](https://discord.gg/xqpKrxt9FC) SERVER.
+For issues, ping me (danni_design) in the [Discord](https://discord.gg/xqpKrxt9FC) server.
 
-# Sequential Purging 
+# Sequential Purging
 
-This incredible macro ensures you shall worry no more! Avoid problems caused by purge lines from previous prints that haven't been removed from the bed.
+This incredible macro ensures you will worry no more about purge lines from previous prints that haven't been removed from the bed.
 
 ![Sequential Purge4](https://github.com/user-attachments/assets/939f6509-9136-4ea3-83d8-b0293a6a49f5)
 
+While the macro itself doesn't (and can't) remove the purge lines from your bed automatically, it provides a system that remembers the locations of previous purges and avoids them in future print jobs. This ensures new purge lines are printed in clean sections of the bed.
 
-While the macro itself doesn't (and can't) remove the purge line from your bed automatically, it does provide a system by which the purge line is printed in avoidance of previous purges, remembering and avoiding the location of the purge lines in previous print jobs.
-
-At the moment the macro can only purge on the front of the bed, not on the back or the left and right sides.
+Currently, the macro can only purge on the front of the bed and does not support purging on the back, left, or right sides.
 
 ## Modes
 ### Continuous
-In continuous mode the purge line gets drawn every print in an order and when the purge_sections_amount is full it will start back at the first purge section.
+In continuous mode, the purge line is drawn in sequence with every print. Once all purge sections are filled, the macro starts again from the first purge section.
+
 ### Limited
-In limited mode a purge line gets drawn every print and you dont have to worry about accidentally leaving the purge lines on the bed because the print will not start once the purge_sections_amount is full.
+In limited mode, the purge line is drawn with every print. The print will not start once all purge sections are full, ensuring no accidental purge lines are left on the bed.
 
 ## Installation
-1. Use `ssh` to open your printer's terminal, e.g. [Putty](https://www.putty.org/) and send these commands. 
-   ```bash
-    sudo apt-get update && sudo apt-get install git -y
+1. Follow the instructions in the [Quick Install guide](https://github.com/Department-of-Design/Kevins-Awesome-Macros?tab=readme-ov-file#quick-install) and press `1` for `Install sequential purging` in the installation wizard. Once done, return to this page.
 
-    cd ~ && git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git && chmod 755 ./Kevins-Awesome-Macros/KAM-setup.sh 
-    
-    ./Kevins-Awesome-Macros/KAM-setup.sh
-    ```
-    Follow the onscreen instructions in the setup wizard.
-    
-2. Open your `moonraker.conf` file and add this configuration:
+2. Edit your `moonraker.conf` file and add this configuration:
    ```yaml
    [update_manager Kevins-Awesome-Macros]
    type: git_repo
@@ -38,38 +30,39 @@ In limited mode a purge line gets drawn every print and you dont have to worry a
    origin: https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
    managed_services: klipper
    primary_branch: main
-    ```
-3. Add this to your printer.cfg.   
-    ```yaml
-    [include KAM-settings.cfg]
-    ``` 
+   ```
+
+3. Add this to your `printer.cfg` file:
+   ```yaml
+   [include KAM-settings.cfg]
+   ```
+
 4. Restart your firmware by sending `FIRMWARE_RESTART`.
-5. Send the macro `_INITIALIZE_PURGE` in your printers console to initialize the purge counting. This fortunately only has to be done once so you can forget about it afterwards.
-6. Open `KAM-settings.cfg`.
-Next go to the `Sequential Purging` section. 
-    ```yaml
-    [gcode_macro _KAM-settings]
-    description: Settings for KAM macros
 
+5. Send the macro `_INITIALIZE_PURGE` in your printer's console to initialize the purge counting. This only needs to be done once.
 
-    ####################
-    # Sequential Purging
-    ####################
+6. Open `KAM-settings.cfg` and navigate to the `Sequential Purging` section:
+   ```yaml
+   [gcode_macro _KAM-settings]
+   description: Settings for KAM macros
 
+   ####################
+   # Sequential Purging
+   ####################
 
-    # Continuous: where the purge line gets drawn every print in an order and when the purge_sections_amount is full it will start back at the first purge section.
-    # Limited: draws a purge line every print and you dont have to worry about accidentally leaving the purgelines on the bed because the print will not start once the purge_sections_amount is full.
-    # !! for the Limited mode you need CHECK_PURGES somewhere before the SEQUENTIAL_PURGE command in your PRINT_START macro. Preferably before your printer heats up so you don't waste the heating time. 
-    # !! when the purge section is full you can use RESET_PURGES to clear the system and start at the first purge section on your next print.
+   # Continuous: where the purge line gets drawn every print in an order and when the purge_sections_amount is full it will start back at the first purge section.
+   # Limited: draws a purge line every print, and you don't have to worry about accidentally leaving the purge lines on the bed because the print will not start once the purge_sections_amount is full.
+   # !! For Limited mode, you need CHECK_PURGES somewhere before the SEQUENTIAL_PURGE command in your PRINT_START macro. Preferably, place it before your printer heats up so you don't waste heating time.
+   # !! When the purge section is full, you can use RESET_PURGES to clear the system and start at the first purge section on your next print.
 
-    # set this to True if you want continuous, and to false if you want limited
-    # default is True
-    variable_continuous: True
+   # Set this to True if you want continuous mode, and to False if you want limited mode.
+   # Default is True
+   variable_continuous: True
 
-    # this is only...
-    ```
+   # this is only...
+   ```
 
-Here you can configure the settings for the macro. The most important setting is `variable_continuous`. With this you can select what [mode](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#modes) you want to use. For continuous you have to set `variable_continuous` to `True`.
+Here, you can configure the settings for the macro. The most important setting is `variable_continuous`. This allows you to select the mode you want to use. For continuous mode, set `variable_continuous` to `True`. For limited mode, set it to `False`. You can read more about the modes [here](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#modes).
 
 
 > [!IMPORTANT]
@@ -78,18 +71,18 @@ Here you can configure the settings for the macro. The most important setting is
 ## Configuration
 | Setting                           | Description                                                                                                                                                                                                                                                                        | Input                                     | Default |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|---------|
-| `variable_continuous`             | Setting for setting the mode you want to use.                                                                                                                                                                                                                                      | `True` (Continuous) <br>`False` (Limited) | `True`  |
-| `variable_stop_print_on_warning`  | This is only needed on limited mode. This will stop the print if the purge section is full, if this is set to false it will echo a message to console instead of aborting the print.<br>This will also automatically reset the purges and continue printing. Use at your own risk. | `True`<br>`False`                         | `False` |
-| `variable_warning_time`           | Time user has to remove purges                                                                                                                                                                                                                                                     | `0` to `3600`                             | `30`    |
-| `variable_x_purge_offset`   | The distance the purge line is away from the bed in X on both sides. This will only (haven't tested this on any other printers) work on configurations where the 0,0 point is on the left bottom corner of the bed.                                                                    | `0` to `100`                              | `10`    |
-| `variable_y_purge_offset`   | The distance the purge line is away from the bed in Y. This will only (haven't tested this on any other printers) work on configurations where the 0,0 point is on the left bottom corner of the bed.                                                                    | `0` to `100`                              | `3`    |
+| `variable_continuous`             | Setting for the mode you want to use.                                                                                                                                                                                                                                           | `True` (Continuous) <br>`False` (Limited) | `True`  |
+| `variable_stop_print_on_warning`  | This is only needed in limited mode. This will stop the print if the purge section is full; if set to false, it will echo a message to the console instead of aborting the print. This will also automatically reset the purges and continue printing. Use at your own risk. | `True`<br>`False`                         | `False` |
+| `variable_warning_time`           | Time the user has to remove purges                                                                                                                                                                                                                                               | `0` to `3600`                             | `30`    |
+| `variable_x_purge_offset`         | The distance the purge line is away from the bed in X on both sides. This will only (not tested on other printers) work on configurations where the 0,0 point is on the left bottom corner of the bed.                                                                          | `0` to `100`                              | `10`    |
+| `variable_y_purge_offset`         | The distance the purge line is away from the bed in Y. This will only (not tested on other printers) work on configurations where the 0,0 point is on the left bottom corner of the bed.                                                                                       | `0` to `100`                              | `3`     |
 | `variable_purge_sections_amount`  | The amount of purge sections in the line.                                                                                                                                                                                                                                          | `0` to `20`                               | `5`     |
 | `variable_purge_height`           | The distance from the bed for the purge line.                                                                                                                                                                                                                                      | Any number above `0`                      | `0.4`   |
-| `variable_flow_rate`              | Flow rate for the purgeline, this will both be used to set the speed of the purge line and the amount of filament extruded so set this setting with caution. Many set this at their hotend flow limit or a little under that.                                                                                                                                                                                                             | Any number above `0`                      | `12`    |
-| `variable_multiplier`           | Purge multiplier is for when you want more purge than stock offers. This will not increase the flow, it will slow down the purge and purge more material. purge line works from 100% to 500%. e.g. 150% more purge = 50% more                                                                                                                                                                                                                                                        | 100 to 500                      | `100`    |
-| `variable_tip_distance`           | The distance between the tip of the filament and the nozzle before purging, should be similar to the final retract amount specified in PRINT_END.                                                                                                                                  | Any number above `0`                      | `10`    |
+| `variable_flow_rate`              | Flow rate for the purge line; this will set the speed of the purge line and the amount of filament extruded, so set this carefully. Many set this at their hotend flow limit or slightly below that.                                                                               | Any number above `0`                      | `12`    |
+| `variable_multiplier`             | Purge multiplier is for when you want more purge than stock offers. This will not increase the flow but will slow down the purge and use more material. The purge line works from 100% to 500%. For example, 150% more purge = 50% more.                                           | 100 to 500                                | `100`   |
+| `variable_tip_distance`           | The distance between the tip of the filament and the nozzle before purging. It should be similar to the final retract amount specified in PRINT_END.                                                                                                                               | Any number above `0`                      | `10`    |
 | `variable_purge_line_end_overlap` | Specifies the overlap of the purge line with the next purge line in percentage.                                                                                                                                                                                                    | Percentage from `0` to `100`              | `50`    |
-| `min_temp_extrude` | temperature where filament can be extruder, will error below this temp.                                                                                                                                                                                                    | Temperature in Celcius             | `180`    |
+| `min_temp_extrude`                | Temperature below which filament cannot be extruded. An error will occur if this temperature is not reached.                                                                                                                                                                      | Temperature in Celsius                     | `180`   |
 ## Macros in config
 
 This package contain's 3 macros: `_SEQUENTIAL_PURGE`, `_CHECK_PURGES` and `_RESET_PURGES`.
@@ -125,28 +118,29 @@ Here is a flowchart on how the macro performs.
 flowchart TD
     A[_SEQUENTIAL_PURGE] --> 
     B[Get settings] --> 
-    C[Calculate]--> 
-    D[Divide the full purge section in multiple \n sections with the given purge_sections_amount] -->
-    E[Calculate the section_index, which \nrepresents which section the current purge falls\n into based on the purge_index and the \nnumber of purge_sections_amount]--> 
+    C[Check if hotend is heated up] -->
+    D[Divide the full purge section into multiple  sections with the given purge_sections_amount] -->
+    E[Calculate section_index, representing the section the current purge falls into based on purge_index] --> 
     F[Get the first coordinate of the purge line]--> 
     G[Get the last coordinate of the purge line]--> 
     H[Continuous or Limited?]
-    H --> |Continuous|I[Make Purgeline in given section] --> A
-    H --> |Limited|J[Make Purgeline in given section] --> K[End macro. Aka start print]
+    H --> |Continuous| I[Check if purge_index exceeds sections_amount] --> J[Reset purge_index if necessary]
+    H --> |Limited| K[Check if purge section is full]
+    K --> |Full| L[Raise error or respond with warning] --> M[Run RESET_PURGES] --> J
+    K --> |Not Full| J
+    J --> N[Make purge line in the calculated section] --> O[Increase purge_index] --> P[End macro]
 ```
 
 ## Uninstalling
-That's unfortunate, is the macro not working for you? If you're having trouble you can either send me direct message on Discord @ danni_design or ping me in the KevinAkaSam's sandbox server. 
+That's unfortunate! Is the macro not working for you? If you're having trouble, feel free to send me a direct message on Discord (@danni_design) or ping me in KevinAkaSam's Sandbox server.
 
-If you really wish to uninstall this macro you can do so opening the setup wizard by sending this in your printers command line.
+If you still wish to uninstall the macro, you can do so by opening the setup wizard with the following command in your printer's command line:
 ```bash
 cd ~ && ./KAM-setup.sh
 ```
+Navigate to the **Uninstall** menu (option 2) and follow the steps provided.
 
-and going to the Uninstall menu (2) and follow the steps given.
-
-
-If you don't have the setup wizard anymore you can manually send these commands in the command line.
+If you no longer have the setup wizard, you can manually uninstall KAM by entering these commands in the command line:
 
 ```bash
 cd
@@ -156,7 +150,7 @@ rm printer_data/config/KAM/*
 rmdir printer_data/config/KAM
 ```
 
-And remove the following from your `printer.cfg`
+Additionally, remove the following from your `printer.cfg` file:
 ```yaml
 [include KAM-settings.cfg]
 ```
@@ -170,31 +164,31 @@ And remove the following from your `printer.cfg`
         </b>
     </summary>
 <p>
+This happens because the macro already includes the `save_variables` section. To fix this, remove the conflicting section from a location other than `sequential_purge.cfg`.
 </p>
-This happens because the macro already includes the `save_variable` section. To fix this remove the section in a place that is not sequential_purge.cfg. 
 </details>
 
 <details>
     <summary>
         <b>
-        I'm getting the error `Error evaluating 'gcode_macro sequential_purge :gcode': jinja2.exceptions.UndefinedError:'dict object' has no attribute 'purge_index'`
+        I'm getting the error `Error evaluating 'gcode_macro sequential_purge :gcode': jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'purge_index'`
         </b>
     </summary>
 <p>
+This error is caused by running an older version of Klipper. To resolve it, either update your system or run the `RESET_PURGES` command.
 </p>
-This error is caused by running an older version of Klipper, to resolve this either update your system or run RESET_PURGES.
 </details>
 
 <details>
     <summary>
         <b>
-        I'm getting the error `Unkown command: "RESPOND"` when using the `_INITIALIZE_PURGES` command. 
+        I'm getting the error `Unknown command: "RESPOND"` when using the `_INITIALIZE_PURGES` command.
         </b>
     </summary>
 <p>
+This error occurs if you don't have the `[respond]` section configured. To fix it, add `[respond]` anywhere in your configuration file, preferably in `printer.cfg`.
 </p>
-You will get this error if you don't have the `[respond]` section configured. You can do so by adding `[respond]` anywhere in your config. The easiest is to add it to your `printer.cfg`
 </details>
 
 ## Credits
-Huge thanks to [Kyleisah](https://github.com/kyleisah) for the amazing work on KAMP and for the inspiration for this macro.
+Huge thanks to [Kyleisah](https://github.com/kyleisah) for the amazing work on KAMP and for the inspiration behind this macro.
