@@ -131,6 +131,7 @@ uninstall_KAM() {
 install_sequential_purging() {
     empty_line
     echo -e "${BOLD_PINK}Installing Sequential Purging...${RESET}"
+    echo -e "${BOLD_RED}DO NOT TURN OF THE MACHINE!${RESET}"
     empty_line
     if [ ! -d "printer_data/config/KAM-settings.cfg" ]; then
         echo -e "${BOLD_WHITE}Copying over config file...${RESET}"
