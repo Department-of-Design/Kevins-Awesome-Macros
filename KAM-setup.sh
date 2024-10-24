@@ -153,6 +153,8 @@ install_sequential_purging() {
     fi
     echo -e "${BOLD_GREEN}Installation succesful!${RESET}"
     empty_line
+    echo -e "${BOLD_PURPLE}For documentation go to https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#installation${RESET}"
+    empty_line
     read -n 1 -s -p $'\e[1;36mPress any key to continue...\e[0m ' key
 }
 
