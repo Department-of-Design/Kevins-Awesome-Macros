@@ -144,6 +144,7 @@ install_sequential_purging() {
     if [ ! -d "printer_data/config/KAM" ]; then
         echo -e "${BOLD_WHITE}Making KAM folder...${RESET}"
         mkdir ~/printer_data/config/KAM/
+        empty_line
         echo -e "${BOLD_WHITE}Creating symbolic link...${RESET}"
         ln -s ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg printer_data/config/KAM
         empty_line
