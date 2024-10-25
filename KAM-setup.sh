@@ -81,9 +81,6 @@ run_choice() {
         1)
             install_sequential_purging
         ;;
-        8)
-            update_KAM
-        ;;
         9)
             empty_line
             if [ ! -d "printer_data/config/KAM" ]; then
@@ -160,17 +157,6 @@ install_sequential_purging() {
     echo -e "${BOLD_PURPLE}For documentation go to https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#installation${RESET}"
     empty_line
     read -n 1 -s -p $'\e[1;36mPress any key to continue...\e[0m ' key
-}
-
-update_KAM () {
-    empty_line
-    echo -e "${BOLD_PURPLE}Updating KAM...${RESET}"
-    empty_line
-    cd ~/Kevins-Awesome-Macros
-    git reset --hard && git pull --ff-only
-    empty_line
-    echo -e "${BOLD_GREEN}Update succesful!\e[0m"
-    sleep 1
 }
 
 empty_line () {
