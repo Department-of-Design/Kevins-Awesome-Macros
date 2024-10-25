@@ -68,7 +68,6 @@ show_menu() {
     echo "========================"
     echo -e "${BOLD_WHITE}1) Install Sequential Purging"
     empty_line
-    echo -e "${BOLD_CYAN}8) Update ${RESET}"
     echo -e "${BOLD_RED}9) Uninstall${RESET}"
     empty_line
     echo -e "${BOLD_WHITE}Q) Exit${RESET}"
