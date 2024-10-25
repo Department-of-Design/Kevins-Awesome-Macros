@@ -89,48 +89,52 @@ run_choice() {
             if [ ! -d "printer_data/config/KAM" ]; then
                 echo -e "${WHITE}Kevin's Awesome Macro's is already uninstalled.${RESET}"
             else
-                while true; do
-                    read -n 1 -s -p $'\e[1;31mAre you sure? You will lose all your settings! [y/n]\e[0m: ' key
-                    if [[ $key == "Y" || $key == "y" ]]; then  # Check if the input is B or b
+                read -p $'\e[1;31mDo you wish to delete the KAM-settings.cfg file? You will lose all your settings. This can\'t be undone! [y/n]\e[0m: ' -r
+                empty_line
+                if [[ $REPLY =~ ^[Yy]$ ]]; then
+                    read -p $'\e[1;31mAre you sure? You will lose all your settings! [y/n]\e[0m: ' -r
+                    empty_line
+                    if [[ $REPLY =~ ^[Yy]$ ]]; then
+                        echo -e "\033[1;31mDeleting KAM settings file...${RESET}"
+                        rm printer_data/config/KAM-settings.cfg
                         uninstall_KAM
-                        break
                     else
-                        echo -e "${GREEN}Fine!"
-                        break
+                        echo -e "${GREEN}Fine! Skipping settings deletion.${RESET}"
+                        uninstall_KAM
                     fi
-                done
+                else
+                    echo -e "${GREEN}Fine! Only deleting the macro files.${RESET}"
+                    uninstall_KAM
+                fi
             fi
-            empty_line
-            read -n 1 -s -p $'\e[1;36mPress any key to continue...\e[0m ' key
+            sleep 1
         ;;
         Q | q)
             empty_line
-            echo -e "${BOLD_RED}Exiting..."
+            echo -e "${BOLD_RED}Exiting...${RESET}"
             exit 0
         ;;
         *)
             echo "Invalid option, please try again."
-            empty_line
-            read -n 1 -s -p $'\e[1;36mPress any key to continue...\e[0m ' key
+            sleep 1
         ;;
     esac
 }
 
 uninstall_KAM() {
     cd
-    echo -e "\033[1;31mDeleting KAM folder contents..."
+    echo -e "\033[1;31mDeleting KAM folder contents...${RESET}"
     rm printer_data/config/KAM/*
-    echo -e "\033[1;31mDeleting KAM folder..."
+    echo -e "\033[1;31mDeleting KAM folder...${RESET}"
     rmdir printer_data/config/KAM
-    echo -e "\033[1;31mDeleting KAM settings file..."
-    rm printer_data/config/KAM-settings.cfg || break
     empty_line
-    echo -e "\033[0;32mDone uninstalling!"
+    echo -e "\033[0;32mDone uninstalling!${RESET}"
 }
 
 install_sequential_purging() {
     empty_line
     echo -e "${BOLD_PINK}Installing Sequential Purging...${RESET}"
+    empty_line
     echo -e "${BOLD_RED}DO NOT TURN OF THE MACHINE!${RESET}"
     empty_line
     if [ ! -e "printer_data/config/KAM-settings.cfg" ]; then
