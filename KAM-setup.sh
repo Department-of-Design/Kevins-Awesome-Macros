@@ -166,11 +166,11 @@ update_KAM () {
     empty_line
     echo -e "${BOLD_PURPLE}Updating KAM...${RESET}"
     empty_line
-    git reset --hard && git pull
+    cd ~/Kevins-Awesome-Macros
+    git reset --hard && git pull --ff-only
     empty_line
     echo -e "${BOLD_GREEN}Update succesful!\e[0m"
-    empty_line
-    read -n 1 -s -p $'\e[1;36mPress any key to continue...\e[0m ' key
+    sleep 1
 }
 
 empty_line () {
