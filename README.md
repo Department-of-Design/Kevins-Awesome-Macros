@@ -26,7 +26,7 @@ To install the macro(s) you want, follow the steps below. This guide assumes you
    Navigate to your home directory and clone the installation repository:
 
    ```bash
-   cd ~ && git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git && chmod 755 ./Kevins-Awesome-Macros/KAM-setup.sh
+   cd ~ && git clone https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
    ```
 
 3. **Run the Setup Script:**
