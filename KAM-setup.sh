@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#!/bin/bash
 
 # Text Colors
 BLACK='\033[0;30m'
