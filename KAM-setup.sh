@@ -150,12 +150,13 @@ install_sequential_purging() {
         mkdir ~/printer_data/config/KAM/
         empty_line
         echo -e "${BOLD_WHITE}Creating symbolic link...${RESET}"
-        ln -s ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg printer_data/config/KAM
+        ln -s ~/Kevins-Awesome-Macros/sequential_purge/config/sequential_purge.cfg printer_data/config/KAM/sequential_purge.cfg
         empty_line
     else
         echo -e "${BOLD_WHITE}KAM folder already exists. Skipping...${RESET}"
         empty_line
     fi
+
     echo -e "${BOLD_GREEN}Installation succesful!${RESET}"
     empty_line
     echo -e "${BOLD_PURPLE}For documentation go to https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/sequential_purge#installation${RESET}"
@@ -174,7 +175,7 @@ install_wait_for_bed_edge_temp() {
         mkdir ~/printer_data/config/KAM/
         empty_line
         echo -e "${BOLD_WHITE}Creating symbolic link...${RESET}"
-        ln -s ~/Kevins-Awesome-Macros/wait_for_bed_edge/config/wait_for_bed_edge.cfg printer_data/config/KAM
+        ln -s ~/Kevins-Awesome-Macros/wait_for_bed_edge/config/wait_for_bed_edge.cfg printer_data/config/KAM/wait_for_bed_edge.cfg
         empty_line
     else
         echo -e "${BOLD_WHITE}KAM folder already exists. Skipping...${RESET}"
