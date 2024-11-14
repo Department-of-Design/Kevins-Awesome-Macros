@@ -77,6 +77,13 @@ This incredible macro ensures you shall worry no more! Avoid problems caused by 
 
 While the macro itself doesn't (and can't) remove the purge line from your bed automatically, it does provide a mechanism by which the purge line is printed in avoidance of previous purges, remembering and avoiding the location of the purge lines in previous print jobs.
 
+## Wait for bed edge temp
+
+[![Documentation](https://github.com/Department-of-Design/Kevins-Awesome-Macros/assets/16231288/da62d421-d8e3-43b6-b535-5429b333bdab)](https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/wait_for_bed_edge)
+
+This simple macro is for printers that have a temperature sensor at the edge of the bed to check whether the whole bed is heated. For example aluminum beds heat faster at the center and take some time to heat at the edges. 
+
+This macro checks the size of the part your printing and if it crosses a certain border around the center of the bed it will wait for the edges to heat so you dont unnecessarily heat the whole bed for a small print.
 # Community
 
 Got stuck with a macro? Unsure of what to do with an error?  

@@ -21,6 +21,8 @@ Your config should look something like this.
 sensor_type: NTC 100K MGB18-104F39050L32
 sensor_pin: PC3
 ```
+> [!IMPORTANT]
+> You should also have `exclude_object` configured. More info: https://www.klipper3d.org/Exclude_Object.html
 
 1. Follow the instructions in the [Quick Install guide](https://github.com/Department-of-Design/Kevins-Awesome-Macros?tab=readme-ov-file#quick-install) and press `2` for `Install wait for bed edge temp` in the installation wizard. Once done, return to this page.
 
