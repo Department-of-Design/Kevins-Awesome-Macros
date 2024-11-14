@@ -44,7 +44,7 @@ In the following case the parts cross the border and the printer will heat to th
     gcode:
         {% set BED_TEMP = params.BED_TEMP|default(60)|float %}
         {% set EXTRUDER_TEMP = params.EXTRUDER_TEMP|default(190)|float %}
-        WAIT_FOR_BED_EDGE_TEMP BED={BED} MINIMUM_TEMP_THRESHOLD=0.8 BOUND=50
+        WAIT_FOR_BED_EDGE_TEMP BED={BED_TEMP} MINIMUM_TEMP_THRESHOLD=0.8 BOUND=50
         # Use absolute coordinates
         G90
         # Home the printer
