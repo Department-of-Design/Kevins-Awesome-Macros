@@ -67,6 +67,8 @@ show_menu() {
     echo "========================"
     echo -e "${BOLD_WHITE}1) Install Sequential Purging"
     empty_line
+    echo -e "${BOLD_WHITE}2) Install wait for bed edge temp"
+    empty_line
     echo -e "${BOLD_RED}9) Uninstall${RESET}"
     empty_line
     echo -e "${BOLD_WHITE}Q) Exit${RESET}"
@@ -78,6 +80,9 @@ run_choice() {
     case $1 in
         1)
             install_sequential_purging
+        ;;
+        2)
+            install_wait_for_bed_edge_temp
         ;;
         9)
             empty_line
@@ -158,6 +163,29 @@ install_sequential_purging() {
     read -n 1 -s -p $'\e[1;36mPress any key to continue...\e[0m ' key
 }
 
+install_wait_for_bed_edge_temp() {
+    empty_line
+    echo -e "${BOLD_PINK}Installing Wait for bed edge temp...${RESET}"
+    empty_line
+    echo -e "${BOLD_RED}DO NOT TURN OF THE MACHINE!${RESET}"
+    empty_line
+    if [ ! -d "printer_data/config/KAM" ]; then
+        echo -e "${BOLD_WHITE}Making KAM folder...${RESET}"
+        mkdir ~/printer_data/config/KAM/
+        empty_line
+        echo -e "${BOLD_WHITE}Creating symbolic link...${RESET}"
+        ln -s ~/Kevins-Awesome-Macros/wait_for_bed_edge/config/wait_for_bed_edge.cfg printer_data/config/KAM
+        empty_line
+    else
+        echo -e "${BOLD_WHITE}KAM folder already exists. Skipping...${RESET}"
+        empty_line
+    fi
+    echo -e "${BOLD_GREEN}Installation succesful!${RESET}"
+    empty_line
+    echo -e "${BOLD_PURPLE}For documentation go to https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/wait_for_bed_edge#installation${RESET}"
+    empty_line
+    read -n 1 -s -p $'\e[1;36mPress any key to continue...\e[0m ' key
+}
 empty_line () {
     echo
 }

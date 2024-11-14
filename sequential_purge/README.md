@@ -21,27 +21,11 @@ In limited mode, the purge line is drawn with every print. The print will not st
 ## Installation
 1. Follow the instructions in the [Quick Install guide](https://github.com/Department-of-Design/Kevins-Awesome-Macros?tab=readme-ov-file#quick-install) and press `1` for `Install sequential purging` in the installation wizard. Once done, return to this page.
 
-2. Edit your `moonraker.conf` file and add this configuration:
-   ```yaml
-   [update_manager Kevins-Awesome-Macros]
-   type: git_repo
-   channel: dev
-   path: ~/Kevins-Awesome-Macros
-   origin: https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
-   managed_services: klipper
-   primary_branch: main
-   ```
+2. Restart your firmware by sending `FIRMWARE_RESTART`.
 
-3. Add this to your `printer.cfg` file:
-   ```yaml
-   [include KAM-settings.cfg]
-   ```
+3. To check if it is installed correctly and initialize the counting, send the macro `_INITIALIZE_PURGE` in your printer's console. This only needs to be done once.
 
-4. Restart your firmware by sending `FIRMWARE_RESTART`.
-
-5. To check if it is installed correctly and initialize the counting, send the macro `_INITIALIZE_PURGE` in your printer's console. This only needs to be done once.
-
-6. Open `KAM-settings.cfg` and navigate to the `Sequential Purging` section:
+4. Open `KAM-settings.cfg` and navigate to the `Sequential Purging` section:
    ```yaml
    [gcode_macro _KAM-settings]
    description: Settings for KAM macros

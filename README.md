@@ -47,8 +47,24 @@ To install the macro(s) you want, follow the steps below. This guide assumes you
 
 5. **Monitor for Prompts:**
    During installation, you may be prompted for manual input. Make sure to follow any on-screen instructions and keep an eye on the terminal for updates.
+
+6. **Edit Your `moonraker.conf` File: Add the following configuration to your `moonraker.conf` file:**
+   ```yaml
+   [update_manager Kevins-Awesome-Macros]
+   type: git_repo
+   channel: dev
+   path: ~/Kevins-Awesome-Macros
+   origin: https://github.com/Department-of-Design/Kevins-Awesome-Macros.git
+   managed_services: klipper
+   primary_branch: main
+   ```
+
+7. **Edit Your `printer.cfg` File: Add the following line to your `printer.cfg` file:**
+   ```yaml
+   [include KAM-settings.cfg]
+   ```
    
-6. **Continue to documentation**
+8. **Continue to documentation**
     Continue to the documentation of the macro you're trying to install. This will also be in the output of the installation.
 # All available macro's
 ## Sequential Purging Macro
