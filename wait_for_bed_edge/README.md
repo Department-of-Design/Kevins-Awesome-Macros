@@ -12,43 +12,47 @@ In the following case the parts cross the border and the printer will heat to th
 
 ## Installation
 
-> [!IMPORTANT]
-> Your temperature sensor has to be called `bed_side` otherwise the macro will not function.
-Your config should look something like this. 
+1. **Naming the Temperature Sensor:**
+   - Make sure your sensor is named exactly `bed_edge` in the configuration file.
+   - Example:
+     ```plaintext
+     [temperature_sensor bed_edge]
+     sensor_type: NTC 100K MGB18-104F39050L32
+     sensor_pin: PC3
+     ```
 
-```yaml
-[temperature_sensor bed_edge]
-sensor_type: NTC 100K MGB18-104F39050L32
-sensor_pin: PC3
-```
-> [!IMPORTANT]
-> You should also have `exclude_object` configured. More info: https://www.klipper3d.org/Exclude_Object.html
+2. **Configuring `exclude_object`:**
+   - This is required for excluding parts of prints if needed. There's more info available in the link provided.
 
-1. **Install the Macro:**  
-   Follow the steps in the [Quick Install guide](https://github.com/Department-of-Design/Kevins-Awesome-Macros?tab=readme-ov-file#quick-install). In the installation wizard, select option `2` by pressing `2`, which corresponds to `Install wait for bed edge temp`. Complete the installation and then return to this guide.
+3. **Installing the Macro:**
+   - Go to the installation guide and, when prompted, select option `2` to install the "wait for bed edge temp" macro.
 
-2. **Restart the Firmware:**  
-   Once installation is complete, restart your firmware by entering the command `FIRMWARE_RESTART` in your terminal or console.
+4. **Restart the Firmware:**
+   - After installing, restart by typing `FIRMWARE_RESTART` in the terminal/console.
 
-3. **Add the Macro to Your Start Sequence:**  
-   Open your print start macro (typically found in `printer.cfg`) and add the `WAIT_FOR_BED_EDGE_TEMP` macro. Replace your existing bed heating command with this new macro `WAIT_FOR_BED_EDGE_TEMP BED={BED} MINIMUM_TEMP_THRESHOLD=0.8 BOUND=50`:
+5. **Add Macro to Your Start Sequence:**
+   - Edit the `PRINT_START` macro in your configuration (`printer.cfg`).
+   - Add the line:
+     ```plaintext
+     WAIT_FOR_BED_EDGE_TEMP BED={BED} MINIMUM_TEMP_THRESHOLD=0.8 BOUND=50
+     ```
+   - This macro replaces your current bed heating command.
+    Here's an example to what it might look like. Don't directly copy this entire print start macro.
 
-> [!IMPORTANT]
-> Your print start macro may look a bit different.
-```yaml
-[gcode_macro PRINT_START]
-gcode:
-    {% set BED_TEMP = params.BED_TEMP|default(60)|float %}
-    {% set EXTRUDER_TEMP = params.EXTRUDER_TEMP|default(190)|float %}
-    WAIT_FOR_BED_EDGE_TEMP BED={BED} MINIMUM_TEMP_THRESHOLD=0.8 BOUND=50
-    # Use absolute coordinates
-    G90
-    # Home the printer
-    G28
+   ```yaml
+    [gcode_macro PRINT_START]
+    gcode:
+        {% set BED_TEMP = params.BED_TEMP|default(60)|float %}
+        {% set EXTRUDER_TEMP = params.EXTRUDER_TEMP|default(190)|float %}
+        WAIT_FOR_BED_EDGE_TEMP BED={BED} MINIMUM_TEMP_THRESHOLD=0.8 BOUND=50
+        # Use absolute coordinates
+        G90
+        # Home the printer
+        G28
     ...
-```
 
-You can play with the `MINIMUM_TEMP_THRESHOLD` and `BOUND` but the default values are generally good enough.
+6. **Tweak Threshold Values if Needed:**
+   - `MINIMUM_TEMP_THRESHOLD` and `BOUND` have default values but can be adjusted if necessary.
 
 ## Uninstalling
 That's unfortunate! Is the macro not working for you? If you're having trouble, feel free to send me a direct message on Discord (@danni_design) or ping me in KevinAkaSam's Sandbox server.
