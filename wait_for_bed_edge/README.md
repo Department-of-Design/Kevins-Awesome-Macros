@@ -24,11 +24,15 @@ sensor_pin: PC3
 > [!IMPORTANT]
 > You should also have `exclude_object` configured. More info: https://www.klipper3d.org/Exclude_Object.html
 
-1. Follow the instructions in the [Quick Install guide](https://github.com/Department-of-Design/Kevins-Awesome-Macros?tab=readme-ov-file#quick-install) and press `2` for `Install wait for bed edge temp` in the installation wizard. Once done, return to this page.
+1. **Install the Macro:**  
+   Follow the steps in the [Quick Install guide](https://github.com/Department-of-Design/Kevins-Awesome-Macros?tab=readme-ov-file#quick-install). In the installation wizard, select option `2` by pressing `2`, which corresponds to `Install wait for bed edge temp`. Complete the installation and then return to this guide.
 
-2. Restart your firmware by sending `FIRMWARE_RESTART`.
+2. **Restart the Firmware:**  
+   Once installation is complete, restart your firmware by entering the command `FIRMWARE_RESTART` in your terminal or console.
 
-3. Add the macro to your print start macro. Replace your existing command to heat the printers bed with `WAIT_FOR_BED_EDGE_TEMP BED={BED} MINIMUM_TEMP_THRESHOLD=0.8 BOUND=50`:
+3. **Add the Macro to Your Start Sequence:**  
+   Open your print start macro (typically found in `printer.cfg`) and add the `WAIT_FOR_BED_EDGE_TEMP` macro. Replace your existing bed heating command with this new macro `WAIT_FOR_BED_EDGE_TEMP BED={BED} MINIMUM_TEMP_THRESHOLD=0.8 BOUND=50`:
+
 > [!IMPORTANT]
 > Your print start macro may look a bit different.
 ```yaml
