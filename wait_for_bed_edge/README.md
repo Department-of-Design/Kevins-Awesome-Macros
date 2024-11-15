@@ -87,7 +87,7 @@ Additionally, remove the following from your `printer.cfg` file:
         </b>
     </summary>
 <p>
-This is because your temperature sensor does not have the right name assigned. Please call it `bed_edge`. Refer to the installation for more info https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/wait_for_bed_temp#installation
+This is because your temperature sensor does not have the right name assigned. Please call it `bed_edge`. Refer to the installation for more info https://github.com/Department-of-Design/Kevins-Awesome-Macros/tree/main/wait_for_bed_edge#installationmain/wait_for_bed_temp#installation
 </p>
 </details>
 
