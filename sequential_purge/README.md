@@ -24,8 +24,8 @@ In limited mode, the purge line is drawn with every print. The print will not st
 2. Restart your firmware by sending `FIRMWARE_RESTART`.
 
 3. To check if it is installed correctly and initialize the counting, send the macro `_INITIALIZE_PURGE` in your printer's console. This only needs to be done once.
-
-4. Open `KAM-settings.cfg` and navigate to the `Sequential Purging` section:
+4. It is required to add `max_extrude_cross_section: 5` to your `[extruder]` config to allow effective purging to be possible.
+5. Open `KAM-settings.cfg` and navigate to the `Sequential Purging` section:
    ```yaml
    [gcode_macro _KAM-settings]
    description: Settings for KAM macros
