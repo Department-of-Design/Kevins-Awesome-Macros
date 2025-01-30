@@ -22,7 +22,7 @@ In the following case the parts cross the border and the printer will heat to th
      ```
 
 2. **Configuring `exclude_object`:**
-   - This is required for excluding parts of prints if needed. There's more info [here](https://www.klipper3d.org/Exclude_Object.html).
+   - This is required for the macro to work and used in Klipper for excluding parts of prints if needed. There's more info [here](https://www.klipper3d.org/Exclude_Object.html).
 
 3. **Installing the Macro:**
    - Run the [Quick Install guide](https://github.com/Department-of-Design/Kevins-Awesome-Macros?tab=readme-ov-file#quick-install) and, when prompted, select option `2` to install the "wait for bed edge temp" macro.
