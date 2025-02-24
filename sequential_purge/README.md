@@ -159,7 +159,7 @@ This happens because the macro already includes the `save_variables` section. To
         </b>
     </summary>
 <p>
-This is caused by a bug in klipper, to resolve this refer to step 3 in the installation or TL;DR run `_INITIALIZE_PURGE`.
+This is caused by a bug in Klipper, to resolve this refer to step 3 in the installation. TL;DR: run _INITIALIZE_PURGE.
 </p>
 </details>
 
