@@ -23,7 +23,7 @@ In limited mode, the purge line is drawn with every print. The print will not st
 
 2. Restart your firmware by sending `FIRMWARE_RESTART`.
 
-3. To check if it is installed correctly and initialize the counting, send the macro `_INITIALIZE_PURGE` in your printer's console. This only needs to be done once.
+3. To initialize the counting and check if everything is installed correctly, send the macro `_INITIALIZE_PURGE` in your printer's console. This only needs to be done once.
 4. It is required to add `max_extrude_cross_section: 5` to your `[extruder]` config to allow effective purging to be possible.
 5. Open `KAM-settings.cfg` and navigate to the `Sequential Purging` section:
    ```yaml
@@ -159,7 +159,7 @@ This happens because the macro already includes the `save_variables` section. To
         </b>
     </summary>
 <p>
-This error is caused by running an older version of Klipper. To resolve it, either update your system or run the `RESET_PURGES` command.
+This is caused by a bug in klipper, to resolve this refer to step 3 in the installation or TL;DR run `_INITIALIZE_PURGE`.
 </p>
 </details>
 
